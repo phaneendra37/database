@@ -5,11 +5,7 @@ CREATE TABLE
     -- will post the user email
     email VARCHAR(50) NOT NULL,
     -- will captrue the first name 
-    first_name VARCHAR(30) DEFAULT SUBSTRING(
-      email
-      FROM
-        1 FOR POSITION('@', IN email) -1
-    ),
+    first_name VARCHAR(30) DEFAULT NULL,
     -- will capture the last name if provided
     last_name VARCHAR(30) DEFAULT NULL,
     -- will captrue the phone number if provided

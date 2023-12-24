@@ -1,9 +1,9 @@
 CREATE TABLE
   IF NOT EXISTS pre_auth(
     -- Will auto generate the column to check how many records we had
-    id INT SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     -- Email must be UNIQUE for all the rows
-    Email VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
     -- Will generate the OTP from the DATAbase side
     Otp INT DEFAULT FLOOR(RANDOM() * (999999 - 100000 + 1) + 100000),
     -- Will capture the wrong inputs after 4-5 will kill the session
@@ -15,5 +15,5 @@ CREATE TABLE
     -- Will capture the source to get the traffic
     source VARCHAR(20) DEFAULT "App",
     -- As it is will capture the created date
-    created_date TIMESTAMP DEFAULT TIMESTAMP,
+    created_date TIMESTAMP DEFAULT TIMESTAMP
   );

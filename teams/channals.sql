@@ -13,5 +13,5 @@ CREATE TABLE
     -- Will capture the
     created_date TIMESTAMP DEFAULT TIMESTAMP,
     -- Adding the relation to the profile so the records will be appropriate
-    Foreign Key (created_by) REFERENCES profile(domain_id),
+    Foreign Key (created_by) REFERENCES profile(domain_id)
   );
