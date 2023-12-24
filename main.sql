@@ -1,11 +1,11 @@
 -- Will map the triggers here
 -- will map the tables after the triggers
-\i './database/teams/pre_auth.sql';
-\i './database/teams/profile.sql';
-\i './database/teams/manage-users.sql';
-\i './database/teams/channals.sql';
-\i './database/teams/channel-members.sql';
-\i './database/teams/messages.sql';
+\i './teams/pre_auth.sql';
+\i './teams/profile.sql';
+\i './teams/manage-users.sql';
+\i './teams/channals.sql';
+\i './teams/channel-members.sql';
+\i './teams/messages.sql';
 
 
 -- will map the views here after rendering the tables
