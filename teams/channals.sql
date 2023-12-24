@@ -13,5 +13,5 @@ CREATE TABLE
     -- Will capture the creation date
     created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     -- Adding the relation to the profile so the records will be appropriate
-    CONSTRAINT fk_created_by FOREIGN KEY (created_by) REFERENCES profile(profile_id)
+    FOREIGN KEY (created_by) REFERENCES profile(profile_id)
   );

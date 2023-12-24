@@ -13,7 +13,7 @@ CREATE TABLE
     -- will capture the message date
     sent_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     --Adding relations for messages
-    FOREIGN KEY (sender_id) REFERENCES profile(domain_id),
-    FOREIGN KEY (receiver_id) REFERENCES profile(domain_id),
+    FOREIGN KEY (sender_id) REFERENCES profile(profile_id),
+    FOREIGN KEY (receiver_id) REFERENCES profile(profile_id),
     FOREIGN KEY (channel_id) REFERENCES channels(channel_id)
   );

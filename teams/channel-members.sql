@@ -11,7 +11,7 @@ CREATE TABLE
     --Will captrue the created date
     created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     -- Adding the relation with profile table
-    Foreign Key (member_id) REFERENCES profile(domain_id),
+    Foreign Key (member_id) REFERENCES profile(profile_id),
     --Adding relation with the channel tables
     Foreign Key (channel_id) REFERENCES channels(channel_id),
     --Adding the CONSTRAINT to not duplicating the accounts
