@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "[sql]": {
+    "editor.defaultFormatter": "cymonk.sql-formatter",
+    "editor.formatOnSave": true
+  },
+  "sql-formatter.ignoreNodeModules": true
+}
