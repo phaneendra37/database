@@ -10,5 +10,5 @@ CREATE TABLE
     invite_status VARCHAR(20) DEFAULT 'Pending',
     --will captring the user invited date
     invited_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    Foreign Key (sender_id) REFERENCES profile(domain_id)
+    Foreign Key (sender_id) REFERENCES profile(profile_id)
   );
