@@ -1,10 +1,12 @@
 name: Deploy
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  postgresql:
+  deploy:
     runs-on: ubuntu-latest
 
     services:
@@ -12,8 +14,8 @@ jobs:
         image: postgres:latest
         env:
           POSTGRES_DB: ${{ secrets.DATABASE }}
-          POSTGRES_USER: ${{secrets.DATABASE_USER}}
-          POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+          POSTGRES_USER: ${{ secrets.DATABASE_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
@@ -33,11 +35,12 @@ jobs:
       - name: Set up PostgreSQL Client
         run: sudo apt-get -y install postgresql-client
 
-      - name: Running the DB queries
-        run: psql -h  ${{ secrets.DATABASE_HOST }} -U  ${{ secrets.DATABASE_USER }} -d ${{secrets.DATABASE}} -a -f ${{ secrets.MAIN_FILE }}
+      - name: Running DB Queries
+        run: |
+          psql -h ${{ secrets.DATABASE_HOST }} -U ${{ secrets.DATABASE_USER }} -d ${{ secrets.DATABASE }} -a -f "$GITHUB_WORKSPACE/${{ secrets.MAIN_FILE }}"
 
         env:
-          PGPASSWORD: ${{ secrets.DATABASE_PASSWORD}}
-          PGUSER: ${{ secrets.DATABASE_USER}}
-          PGHOST: ${{secrets.DATABASE_HOST}}
-          PGDATABASE: ${{secrets.DATABASE}}
+          PGPASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          PGUSER: ${{ secrets.DATABASE_USER }}
+          PGHOST: ${{ secrets.DATABASE_HOST }}
+          PGDATABASE: ${{ secrets.DATABASE }}
