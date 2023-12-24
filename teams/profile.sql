@@ -3,7 +3,7 @@ CREATE TABLE
     -- Will generate the profile id 
     profile_id SERIAL PRIMARY KEY,
     -- Will post the user email
-    email VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
     -- Will capture the first name 
     first_name VARCHAR(30) DEFAULT NULL,
     -- Will capture the last name if provided
@@ -11,7 +11,7 @@ CREATE TABLE
     -- Will capture the phone number if provided
     phone_number DECIMAL(16) DEFAULT NULL,
     -- Will capture the profile picture if provided
-    profile_pic BYTEA,
+    profile_pic VARCHAR(300),
     -- Will store the date of birth 
     date_of_birth DATE,
     -- Will capture the source of the user
