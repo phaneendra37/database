@@ -11,9 +11,9 @@ CREATE TABLE
     -- For group messages, store the channel_id
     message_content TEXT NOT NULL,
     -- will capture the message date
-    sent_date TIMESTAMP DEFAULT TIMESTAMP,
+    sent_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     --Adding relations for messages
-    FOREIGN KEY (sender_id) REFERENCES user_profile(user_id),
-    FOREIGN KEY (receiver_id) REFERENCES user_profile(user_id),
+    FOREIGN KEY (sender_id) REFERENCES profile(domain_id),
+    FOREIGN KEY (receiver_id) REFERENCES profile(domain_id),
     FOREIGN KEY (channel_id) REFERENCES channels(channel_id)
   );

@@ -1,23 +1,23 @@
 CREATE TABLE
-  IF NOT EXISTS profile(
+  IF NOT EXISTS profile (
     -- Will generate the profile id 
-    domain_id SERIAL PRIMARY KEY,
-    -- will post the user email
-    email VARCHAR(50) NOT NULL,
-    -- will captrue the first name 
+    profile_id SERIAL PRIMARY KEY,
+    -- Will post the user email
+    email VARCHAR(50) UNIQUE NOT NULL,
+    -- Will capture the first name 
     first_name VARCHAR(30) DEFAULT NULL,
-    -- will capture the last name if provided
+    -- Will capture the last name if provided
     last_name VARCHAR(30) DEFAULT NULL,
-    -- will captrue the phone number if provided
+    -- Will capture the phone number if provided
     phone_number DECIMAL(16) DEFAULT NULL,
-    -- will capture the profile picture if provided
+    -- Will capture the profile picture if provided
     profile_pic BYTEA,
-    -- will store the date of birth 
+    -- Will store the date of birth 
     date_of_birth DATE,
-    -- Will capture the source o    f user
+    -- Will capture the source of the user
     source VARCHAR(20) DEFAULT 'Direct',
-    -- account status
+    -- Account status
     account_status VARCHAR(20) DEFAULT 'Activated',
-    --Captrue the date of the user added
-    created_date TIMESTAMP DEFAULT TIMESTAMP,
+    -- Capture the date when the user was added
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );

@@ -1,17 +1,17 @@
 CREATE TABLE
-  IF NOT EXISTS channels(
-    -- will generate the channel id to refering in somewhere
+  IF NOT EXISTS channels (
+    -- Will generate the channel id to refer in somewhere
     channel_id SERIAL PRIMARY KEY,
-    -- Name of the channel will store here
+    -- Name of the channel will be stored here
     name VARCHAR(50) NOT NULL,
-    -- Description for the channel will store here
-    description VARCHAR(200) DEFAULT NULL,
-    -- Will store the channel is private or public
+    -- Description for the channel will be stored here
+    description VARCHAR(200),
+    -- Will store whether the channel is private or public
     is_private BOOLEAN DEFAULT FALSE,
     -- Will store the user id
-    created_by Int,
-    -- Will capture the
-    created_date TIMESTAMP DEFAULT TIMESTAMP,
+    created_by INT,
+    -- Will capture the creation date
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     -- Adding the relation to the profile so the records will be appropriate
-    Foreign Key (created_by) REFERENCES profile(domain_id)
+    CONSTRAINT fk_created_by FOREIGN KEY (created_by) REFERENCES profile(profile_id)
   );

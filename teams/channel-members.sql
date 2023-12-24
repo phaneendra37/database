@@ -9,7 +9,7 @@ CREATE TABLE
     -- Will store the role as a member present
     role varchar(20) DEFAULT 'Member',
     --Will captrue the created date
-    created_date TIMESTAMP DEFAULT TIMESTAMP,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     -- Adding the relation with profile table
     Foreign Key (member_id) REFERENCES profile(domain_id),
     --Adding relation with the channel tables
