@@ -1,4 +1,5 @@
-CREATE TABLE IF NOT EXISTS f_profile(
+CREATE TABLE
+  IF NOT EXISTS f_profile(
     -- user can login with the email 
     email UNIQUE DEFAULT NULL,
     -- user can login with the phone number
@@ -26,4 +27,4 @@ CREATE TABLE IF NOT EXISTS f_profile(
     created_date TIMESTAMP DEFAULT TIMESTAMP,
     -- will update the date on update
     updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+  );
