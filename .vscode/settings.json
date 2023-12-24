@@ -1,8 +1,21 @@
 {
   "editor.formatOnSave": true,
+  "editor.autoClosingComments": "never",
+  "comments.collapseOnResolve": false,
+  "prettier.trailingComma": "all",
+  "prettier.printWidth": 200,
+  "comments.visible": true,
   "[sql]": {
-    "editor.defaultFormatter": "cymonk.sql-formatter",
-    "editor.formatOnSave": true
-  },
-  "sql-formatter.ignoreNodeModules": true
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter",
+    "editor.formatOnSave": true,
+    "editor.autoClosingComments": "always",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.unicodeHighlight.includeComments": true,
+    "editor.comments.ignoreEmptyLines": false,
+    "editor.colorDecorators": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.comments.insertSpace": false,
+    "diffEditor.maxFileSize": 50,
+    "editor.formatOnPaste": true
+  }
 }
