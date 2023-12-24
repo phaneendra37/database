@@ -1,7 +1,7 @@
 CREATE TABLE
   IF NOT EXISTS pre_auth(
     -- Will auto generate the column to check how many records we had
-    id INT SERIAL,
+    id INT SERIAL PRIMARY KEY,
     -- Email must be UNIQUE for all the rows
     Email VARCHAR(50) UNIQUE NOT NULL,
     -- Will generate the OTP from the DATAbase side

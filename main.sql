@@ -1,6 +1,6 @@
 -- Will map the triggers here
 -- will map the tables after the triggers
-\i './teams/pre_auth.sql';
+\i './teams/pre-auth.sql';
 \i './teams/profile.sql';
 \i './teams/manage-users.sql';
 \i './teams/channals.sql';

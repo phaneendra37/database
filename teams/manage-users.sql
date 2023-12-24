@@ -1,7 +1,7 @@
 CREATE TABLE
   IF NOT EXISTS invited_users(
     --will capture the is how many invited 
-    uid INT SERIAL PRIMARY KEY,
+    uid SERIAL PRIMARY KEY,
     --Will captrue the sender id 
     sender_id INT NOT NULL,
     --capturing the email 

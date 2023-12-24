@@ -1,7 +1,7 @@
 CREATE TABLE
   IF NOT EXISTS channel_members(
     --Will adding the primary key to reference this so somewhere 
-    id INT SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     -- Will capture ID from channels table
     channel_id INT NOT NULL,
     -- Storing the member id in profiles table

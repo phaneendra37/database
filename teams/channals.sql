@@ -1,7 +1,7 @@
 CREATE TABLE
   IF NOT EXISTS channels(
     -- will generate the channel id to refering in somewhere
-    channel_id INT SERIAL PRIMARY KEY,
+    channel_id SERIAL PRIMARY KEY,
     -- Name of the channel will store here
     name VARCHAR(50) NOT NULL,
     -- Description for the channel will store here

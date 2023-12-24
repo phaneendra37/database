@@ -1,7 +1,7 @@
 CREATE TABLE
   IF NOT EXISTS profile(
     -- Will generate the profile id 
-    domain_id INT SERIAL,
+    domain_id SERIAL PRIMARY KEY,
     -- will post the user email
     email VARCHAR(50) NOT NULL,
     -- will captrue the first name 
