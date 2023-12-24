@@ -1,0 +1,27 @@
+{
+  "name": "37apps-data-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "@for /r database %i in (*.sql) do @if /i not %i==*\\node_modules\\* @(sql-formatter --fix %i && echo %~nxi)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phaneendra37/database.git"
+  },
+  "dependencies": {
+    "node-pg-migrate": "^6.2.2",
+    "pg": "^8.11.3"
+  },
+  "author": "phaneendra kumar kotipalli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phaneendra37/database/issues"
+  },
+  "homepage": "https://github.com/phaneendra37/database#readme",
+  "devDependencies": {
+    "sql-formatter": "^15.0.2"
+  }
+}
